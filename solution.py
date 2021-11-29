@@ -14,7 +14,7 @@ class Solution:
         # validate arguments
         if not isinstance(rotationString, str):
             raise Exception('rotationString must be a string.')
-        if not isinstance(n, int) or n < 0:
+        if not isinstance(n, int) or n < 1:
             raise Exception('n must be a positive integer')
         stringLength = len(rotationString)
         # if the rotation amount is larger than the length of the string
@@ -22,4 +22,3 @@ class Solution:
         if n > stringLength:
             n = n % stringLength
         return rotationString[-n:] + rotationString[:(stringLength - n)]
-
