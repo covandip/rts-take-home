@@ -16,14 +16,10 @@ class Solution:
             raise Exception('rotationString must be a string.')
         if not isinstance(n, int) or n < 0:
             raise Exception('n must be a positive integer')
-        length = len(rotationString)
+        stringLength = len(rotationString)
         # if the rotation amount is larger than the length of the string
         # reduce to n mod length to keep the indices in bounds
-        if n > length:
-            n = n % length
-        return rotationString[-n:] + rotationString[:(length - n)]
+        if n > stringLength:
+            n = n % stringLength
+        return rotationString[-n:] + rotationString[:(stringLength - n)]
 
-
-s = Solution()
-print(s.aboveBelow([1, 2, 3, 4, 5, 6, 7, 8], 19))
-print(s.stringRotation("123456789", 4))
